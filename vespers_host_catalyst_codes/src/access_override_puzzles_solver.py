@@ -28,6 +28,7 @@ def access_override_puzzle_2(target):
     input_is_valid(target)
 
     # brute force attempt
+    # not terrible because only checking 1-9 each loop
     # finds first set of 4 numbers that multiply to target
     for num1 in range(1, 10):
         for num2 in range(1, 10):
@@ -58,6 +59,8 @@ def access_override_puzzle_3(target):
 
     # brute force attempt
 
+
+    # optimized attempt
 
     print(f"Error: Could not find 2 sets of 4 numbers that when added"
           f"make 2 numbers that then multiply to equal {target}")
