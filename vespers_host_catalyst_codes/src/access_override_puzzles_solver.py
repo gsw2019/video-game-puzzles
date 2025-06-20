@@ -28,7 +28,7 @@ def access_override_puzzle_2(target):
     input_is_valid(target)
 
     # brute force attempt
-    # finds first set of 4 numbers that multiple to target
+    # finds first set of 4 numbers that multiply to target
     for num1 in range(1, 10):
         for num2 in range(1, 10):
             if len({num1, num2}) == 2:
