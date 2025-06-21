@@ -7,25 +7,27 @@ Purpose:    provides possible inputs to Access Override Puzzle #2 and
 """
 
 
-def input_is_valid(target):
-    """checks that the user input is an integer
+def get_input():
+    """checks that the user input is an integer. Continues to prompt
+    user until an integer is entered or program is interrupted.
 
-    :param target:  (str) user input
-    :return:        None
+    :return:    (int) target value
     """
-    if not target.isnumeric():
-        print("Error: Invalid input. Must be an integer")
-        exit(code=1)
+    while True:
+        try:
+            user_in = int(input("Target: "))
+            return user_in
+        except ValueError:
+            print("Error: Invalid input. Target must be an integer")
 
 
-def access_override_puzzle_2(target):
+def access_override_puzzle_2():
     """computes 4 digits (1-9) that can be multiplied together to equal
     target. The 4 digits must be unique.
 
-    :param target:  (str) target value
-    :return:        None
+    :return:    None
     """
-    input_is_valid(target)
+    target = get_input()
 
     # brute force attempt
     # not terrible because only checking 1-9 each loop
@@ -47,15 +49,14 @@ def access_override_puzzle_2(target):
     print(f"Error: Could not find 4 numbers that multiply to equal {target}")
 
 
-def access_override_puzzle_3(target):
+def access_override_puzzle_3():
     """computes 2 sets of 4 digits such that when the first set is
     added together X and the second set is added together Y, X * Y is
     equal to target. The digits in each set must be unique.
 
-    :param target:  (str) target value
-    :return:        (str) 2 sets of 4 digits numbers
+    :return:    None
     """
-    input_is_valid(target)
+    target = get_input()
 
     # brute force attempt
 
@@ -71,8 +72,7 @@ def main():
 
     :return:
     """
-    user_in = input("Target: ")
-    access_override_puzzle_2(user_in)
+    access_override_puzzle_2()
 
 
 if __name__ == "__main__":
