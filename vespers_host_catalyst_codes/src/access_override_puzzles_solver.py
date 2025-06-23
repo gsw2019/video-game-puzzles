@@ -32,19 +32,26 @@ def access_override_puzzle_2():
     # brute force attempt
     # not terrible because only checking 1-9 each loop
     # finds first set of 4 numbers that multiply to target
-    for num1 in range(1, 10):
-        for num2 in range(1, 10):
-            if len({num1, num2}) == 2:
-                for num3 in range(1, 10):
-                    if len({num1, num2, num3}) == 3:
-                        for num4 in range(1, 10):
-                            if len({num1, num2, num3, num4}) == 4:
-                                if num1 * num2 * num3 * num4 == int(target):
-                                    print(f"{num1}, {num2}, {num3}, {num4}")
-                                    return
+    # for num1 in range(1, 10):
+    #     for num2 in range(1, 10):
+    #         if len({num1, num2}) == 2:
+    #             for num3 in range(1, 10):
+    #                 if len({num1, num2, num3}) == 3:
+    #                     for num4 in range(1, 10):
+    #                         if len({num1, num2, num3, num4}) == 4:
+    #                             if num1 * num2 * num3 * num4 == int(target):
+    #                                 print(f"{num1}, {num2}, {num3}, {num4}")
+    #                                 return
 
     # optimized attempt?
-    # TODO
+    #
+    for num1 in range(1, 7):
+        for num2 in range(num1+1, 8):
+            for num3 in range(num2+1,  9):
+                for num4 in range(num3+1, 10):
+                    if num1 * num2 * num3 * num4 == target:
+                        print(f"{num1}, {num2}, {num3}, {num4}")
+                        return
 
     print(f"Error: Could not find 4 numbers that multiply to equal {target}")
 
