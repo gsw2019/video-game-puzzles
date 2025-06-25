@@ -37,6 +37,7 @@ def main():
             result = solver.puzzle_2(target)
 
             if result:
+                print("-------------------------")
                 print(result)
             else:
                 print(f"No solution found for target: {target}")
@@ -47,6 +48,7 @@ def main():
             result = solver.puzzle_3(target)
 
             if result:
+                print("-------------------------")
                 print(result)
             else:
                 print(f"No valid sets found for target: {target}")

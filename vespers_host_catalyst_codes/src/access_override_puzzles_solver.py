@@ -73,7 +73,7 @@ def puzzle_3(target):
         set2 = find_unique_sum_set(v)
 
         if set1 != "" and set2 != "":
-            return (f"First set: {set1}"
+            return (f"First set: {set1}\n"
                     f"Second set: {set2}")
-        else:
-            return ""
+
+    return ""
